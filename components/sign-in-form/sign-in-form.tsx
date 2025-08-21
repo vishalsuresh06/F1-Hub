@@ -1,23 +1,12 @@
 "use client";
 
 import React from "react";
-import styles from "./sign-in-form.module.css";
+import styles from "../shared/form.module.css";
 import Link from "next/link";
-import { useState } from "react";
-import { validateAccount } from "@/utils/account-validation";
 
 const SignInForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-  };
-
   return (
-    <form className={styles.signInForm}>
+    <form className={styles.form}>
       <div className={styles.formGroup}>
         <label htmlFor="email" className={styles.label}>
           Email
@@ -28,8 +17,6 @@ const SignInForm = () => {
           placeholder="Enter your email"
           className={styles.input}
           required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
 
@@ -43,8 +30,6 @@ const SignInForm = () => {
           placeholder="Enter your password"
           className={styles.input}
           required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
 
@@ -53,8 +38,6 @@ const SignInForm = () => {
           <input
             type="checkbox"
             className={styles.checkbox}
-            checked={rememberMe}
-            onChange={(e) => setRememberMe(e.target.checked)}
           />
           <span className={styles.checkboxText}>Remember me</span>
         </label>
@@ -66,6 +49,13 @@ const SignInForm = () => {
       <button type="submit" className={styles.submitButton}>
         Sign In
       </button>
+
+      <div className={styles.navLink}>
+        Don't have an account?{" "}
+        <Link href="/signup" className={styles.link}>
+          Sign Up
+        </Link>
+      </div>
     </form>
   );
 };

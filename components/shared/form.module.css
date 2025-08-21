@@ -1,9 +1,20 @@
-/* Sign In Form */
-.signInForm {
+/* Shared Form Styles */
+.form {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
     margin-top: 1.5rem;
+}
+
+.form.signUp {
+    max-width: 600px;
+    width: 100%;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
 .formGroup {
@@ -84,6 +95,17 @@
     text-decoration: underline;
 }
 
+/* Error Message */
+.errorMessage {
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    color: #fca5a5;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
 /* Submit Button */
 .submitButton {
     width: 100%;
@@ -103,7 +125,13 @@
     overflow: hidden;
 }
 
-.submitButton::before {
+.submitButton:disabled {
+    background: rgba(148, 148, 152, 0.3);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.submitButton:not(:disabled)::before {
     content: '';
     position: absolute;
     top: 0;
@@ -114,16 +142,50 @@
     transition: left 0.5s ease;
 }
 
-.submitButton:hover::before {
+.submitButton:not(:disabled):hover::before {
     left: 100%;
 }
 
-.submitButton:hover {
+.submitButton:not(:disabled):hover {
     background: linear-gradient(135deg, #dc0000, #b30000);
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(225, 6, 0, 0.4);
 }
 
-.submitButton:active {
+.submitButton:not(:disabled):active {
     transform: translateY(0);
+}
+
+/* Navigation Links */
+.navLink {
+    text-align: center;
+    margin-top: 1rem;
+    color: #949498;
+    font-size: 0.875rem;
+}
+
+.link {
+    color: #e10600;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.link:hover {
+    color: #949498;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .formRow {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    
+    .form.signUp {
+        max-width: 100%;
+    }
 }

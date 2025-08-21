@@ -5,7 +5,6 @@ import { SignOutButton } from "@/components/buttons/sign-out-button";
 import { auth } from "@/auth";
 import Link from "next/link";
 import styles from "./page.module.css";
-import SignInForm from "@/components/sign-in-form/sign-in-form";
 
 export default async function Home() {
 
@@ -45,11 +44,14 @@ export default async function Home() {
           <hr className={styles.br}/>
         </div>
 
-        <SignInForm />
-        
-        <p className={styles.signupText}>
-          Don't have an account? <Link href="/signup" className={styles.signupLink}>Sign up</Link>
-        </p>
+        <div className={styles.authLinks}>
+          <Link href="/sign-in" className={styles.authLink}>
+            Sign In with Email
+          </Link>
+          <p className={styles.signupText}>
+            Don't have an account? <Link href="/signup" className={styles.signupLink}>Sign up</Link>
+          </p>
+        </div>
       </div>
     </div>
   )
