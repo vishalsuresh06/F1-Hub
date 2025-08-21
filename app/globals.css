@@ -5,21 +5,3 @@
     margin: 0;
 }
 
-body {
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: #1a1a1a;
-    color: #ffffff;
-}
-
-/* F1 Theme Colors */
-:root {
-    --f1-red: #d10000;
-    --f1-dark-red: #a00000;
-    --f1-gray: #2a2a2a;
-    --f1-light-gray: #404040;
-    --f1-lighter-gray: #666666;
-    --f1-white: #ffffff;
-    --f1-off-white: #f5f5f5;
-    --f1-black: #0a0a0a;
-}
-
