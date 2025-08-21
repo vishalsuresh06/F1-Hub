@@ -73,9 +73,9 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
       return session;
     },
     async redirect({ url, baseUrl }) {
-      // Redirect to user-info page after successful login
+      // Redirect to dashboard page after successful login
       if (url.startsWith(baseUrl)) {
-        return `${baseUrl}/user-info`;
+        return `${baseUrl}/dashboard`;
       }
       // Allows relative callback URLs
       else if (url.startsWith("/")) {

@@ -28,8 +28,8 @@ const SignInForm = () => {
       if (result?.error) {
         setError("Invalid email or password");
       } else {
-        // Redirect to user-info page on successful login
-        router.push("/user-info");
+        // Redirect to dashboard page on successful login
+        router.push("/dashboard");
       }
     } catch (error) {
       setError("An error occurred during sign in");
