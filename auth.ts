@@ -1,6 +1,16 @@
 import NextAuth from "next-auth";
-import GitHub from 'next-auth/providers/github'
+import Credentials from "next-auth/providers/credentials";
+import GitHub from "next-auth/providers/github";
+import { validateAccount } from "./utils/account-validation";
 
-export const {auth, handlers, signIn, signOut} = NextAuth({
-    providers: [GitHub],
-})
+interface User {
+  id: string;
+  email: string;
+  name: string;
+  password: string;
+}
+
+export const { auth, handlers, signIn, signOut } = NextAuth({
+  providers: [
+    GitHub,],
+});

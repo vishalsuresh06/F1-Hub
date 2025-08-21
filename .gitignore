@@ -42,3 +42,5 @@ next-env.d.ts
 
 #backend
 venv/
+
+/lib/generated/prisma

@@ -1,12 +1,14 @@
 "use server"
 
 import { SignInButton } from "@/components/buttons/sign-in-button";
+import { SignOutButton } from "@/components/buttons/sign-out-button";
 import { auth } from "@/auth";
 import Link from "next/link";
-import { SignOutButton } from "@/components/buttons/sign-out-button";
 import styles from "./page.module.css";
+import SignInForm from "@/components/sign-in-form/sign-in-form";
 
 export default async function Home() {
+
   const session = await auth();
 
   if (session?.user) {
@@ -14,13 +16,6 @@ export default async function Home() {
       <div className={styles.container}>
         <div className={styles.welcomeCard}>
           <div className={styles.userInfo}>
-            {session.user.image && (
-              <img 
-                src={session.user.image} 
-                alt={session.user.name || 'User'} 
-                className={styles.userAvatar}
-              />
-            )}
             <h2 className={styles.userName}>{session.user.name}</h2>
             <p className={styles.userEmail}>{session.user.email}</p>
           </div>
@@ -49,44 +44,8 @@ export default async function Home() {
           <p> OR </p>
           <hr className={styles.br}/>
         </div>
-        
-        <form className={styles.signInForm}>
-          <div className={styles.formGroup}>
-            <label htmlFor="email" className={styles.label}>Email</label>
-            <input 
-              type="email" 
-              id="email"
-              placeholder="Enter your email" 
-              className={styles.input}
-              required
-            />
-          </div>
-          
-          <div className={styles.formGroup}>
-            <label htmlFor="password" className={styles.label}>Password</label>
-            <input 
-              type="password" 
-              id="password"
-              placeholder="Enter your password" 
-              className={styles.input}
-              required
-            />
-          </div>
-          
-          <div className={styles.formOptions}>
-            <label className={styles.checkboxLabel}>
-              <input type="checkbox" className={styles.checkbox} />
-              <span className={styles.checkboxText}>Remember me</span>
-            </label>
-            <Link href="/forgot-password" className={styles.forgotLink}>
-              Forgot password?
-            </Link>
-          </div>
-          
-          <button type="submit" className={styles.submitButton}>
-            Sign In
-          </button>
-        </form>
+
+        <SignInForm />
         
         <p className={styles.signupText}>
           Don't have an account? <Link href="/signup" className={styles.signupLink}>Sign up</Link>
