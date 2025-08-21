@@ -71,6 +71,17 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
         session.user.id = token.id as string;
       }
       return session;
+    },
+    async redirect({ url, baseUrl }) {
+      // Redirect to user-info page after successful login
+      if (url.startsWith(baseUrl)) {
+        return `${baseUrl}/user-info`;
+      }
+      // Allows relative callback URLs
+      else if (url.startsWith("/")) {
+        return `${baseUrl}${url}`;
+      }
+      return baseUrl;
     }
   }
 });

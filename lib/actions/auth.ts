@@ -8,7 +8,7 @@ import { redirect } from "next/navigation"
 const prisma = new PrismaClient()
 
 export const login = async () => {
-    await signIn("github", { redirectTo: "/"});
+    await signIn("github", { redirectTo: "/user-info"});
 }
 
 export const logout = async () => {
@@ -61,6 +61,6 @@ export const signUp = async (formData: FormData) => {
         }
     })
 
-    // Redirect to sign-in page after successful registration
-    redirect("/sign-in?message=Account created successfully! Please sign in.")
+    // Redirect to user-info page after successful registration
+    redirect("/user-info?message=Account created successfully!")
 }

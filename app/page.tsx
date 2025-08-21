@@ -7,29 +7,6 @@ import Link from "next/link";
 import styles from "./page.module.css";
 
 export default async function Home() {
-
-  const session = await auth();
-
-  if (session?.user) {
-    return (
-      <div className={styles.container}>
-        <div className={styles.welcomeCard}>
-          <div className={styles.userInfo}>
-            <h2 className={styles.userName}>{session.user.name}</h2>
-            <p className={styles.userEmail}>{session.user.email}</p>
-          </div>
-          
-          <div className={styles.buttonGroup}>
-            <Link href="/user-info" className={styles.link}>
-              View User Info
-            </Link>
-            <SignOutButton />
-          </div>
-        </div>
-      </div>
-    )
-  }
-
   return (
     <div className={styles.container}>
       <div className={styles.welcomeCard}>
