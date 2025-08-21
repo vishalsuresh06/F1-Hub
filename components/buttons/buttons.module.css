@@ -15,10 +15,12 @@
   font-family: inherit;
   position: relative;
   overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .button:focus {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid #d10000;
   outline-offset: 2px;
 }
 
@@ -33,41 +35,41 @@
 
 /* Primary button */
 .primary {
-  background-color: #3b82f6;
+  background-color: #d10000;
   color: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .primary:hover:not(:disabled) {
-  background-color: #2563eb;
+  background-color: #a00000;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 12px rgba(209, 0, 0, 0.4);
 }
 
 /* Secondary button */
 .secondary {
-  background-color: #f1f5f9;
-  color: #1e293b;
-  border: 1px solid #e2e8f0;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #404040;
 }
 
 .secondary:hover:not(:disabled) {
-  background-color: #e2e8f0;
+  background-color: #d10000;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(209, 0, 0, 0.3);
 }
 
 /* Danger button */
 .danger {
-  background-color: #ef4444;
+  background-color: #d10000;
   color: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .danger:hover:not(:disabled) {
-  background-color: #dc2626;
+  background-color: #a00000;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  box-shadow: 0 4px 12px rgba(209, 0, 0, 0.4);
 }
 
 /* Success button */
@@ -85,15 +87,16 @@
 
 /* GitHub button */
 .github {
-  background-color: #1e293b;
+  background-color: #1a1a1a;
   color: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #404040;
 }
 
 .github:hover:not(:disabled) {
-  background-color: #0f172a;
+  background-color: #2a2a2a;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(30, 41, 59, 0.3);
+  box-shadow: 0 4px 12px rgba(42, 42, 42, 0.3);
 }
 
 /* Small button */
@@ -172,11 +175,6 @@
   height: 300px;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
 /* Responsive design */
 @media (max-width: 768px) {
   .button {
@@ -187,18 +185,5 @@
   .large {
     padding: 0.875rem 1.75rem;
     font-size: 0.9375rem;
-  }
-}
-
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .secondary {
-    background-color: #334155;
-    color: #f1f5f9;
-    border-color: #475569;
-  }
-  
-  .secondary:hover:not(:disabled) {
-    background-color: #475569;
   }
 }

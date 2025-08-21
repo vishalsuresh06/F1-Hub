@@ -44,6 +44,53 @@ export default async function Home() {
           Sign in with your GitHub account to get started
         </p>
         <SignInButton />
+        <div className={styles.separator}>
+          <hr className={styles.br}/>
+          <p> OR </p>
+          <hr className={styles.br}/>
+        </div>
+        
+        <form className={styles.signInForm}>
+          <div className={styles.formGroup}>
+            <label htmlFor="email" className={styles.label}>Email</label>
+            <input 
+              type="email" 
+              id="email"
+              placeholder="Enter your email" 
+              className={styles.input}
+              required
+            />
+          </div>
+          
+          <div className={styles.formGroup}>
+            <label htmlFor="password" className={styles.label}>Password</label>
+            <input 
+              type="password" 
+              id="password"
+              placeholder="Enter your password" 
+              className={styles.input}
+              required
+            />
+          </div>
+          
+          <div className={styles.formOptions}>
+            <label className={styles.checkboxLabel}>
+              <input type="checkbox" className={styles.checkbox} />
+              <span className={styles.checkboxText}>Remember me</span>
+            </label>
+            <Link href="/forgot-password" className={styles.forgotLink}>
+              Forgot password?
+            </Link>
+          </div>
+          
+          <button type="submit" className={styles.submitButton}>
+            Sign In
+          </button>
+        </form>
+        
+        <p className={styles.signupText}>
+          Don't have an account? <Link href="/signup" className={styles.signupLink}>Sign up</Link>
+        </p>
       </div>
     </div>
   )
