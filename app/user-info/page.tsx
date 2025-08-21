@@ -1,6 +1,6 @@
 import React from 'react'
 import { auth } from "@/auth";
-import { SignOutButton } from '@/components/sign-out-button';
+import { SignOutButton } from '@/components/buttons/sign-out-button';
 
 const UserInfo = async () => {
   const session = await auth();
