@@ -1,0 +1,400 @@
+/* F1 Themed Base Button Styles */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  min-height: 48px;
+  font-family: 'Formula1', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.button:focus {
+  box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.3);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* F1 GitHub Button Styles */
+.github {
+  background: linear-gradient(135deg, #24292e, #1a1e22);
+  color: white;
+  border: 2px solid transparent;
+}
+
+.github::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.github:hover::before {
+  left: 100%;
+}
+
+.github:hover {
+  background: linear-gradient(135deg, #1a1e22, #0d1117);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(36, 41, 46, 0.4);
+}
+
+.github:active {
+  transform: translateY(0);
+  background: linear-gradient(135deg, #0d1117, #010409);
+}
+
+/* Alternative GitHub styling with F1 theme */
+.github.outline {
+  background: rgba(21, 21, 30, 0.9);
+  color: #ffffff;
+  border: 2px solid #24292e;
+}
+
+.github.outline:hover {
+  background: linear-gradient(135deg, #24292e, #1a1e22);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(36, 41, 46, 0.3);
+}
+
+/* F1 Danger/Sign Out Button Styles */
+.danger {
+  background: linear-gradient(135deg, #e10600, #dc0000);
+  color: white;
+  border: 2px solid transparent;
+}
+
+.danger::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.danger:hover::before {
+  left: 100%;
+}
+
+.danger:hover {
+  background: linear-gradient(135deg, #dc0000, #b30000);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(225, 6, 0, 0.4);
+}
+
+.danger:active {
+  transform: translateY(0);
+  background: linear-gradient(135deg, #b30000, #900000);
+}
+
+/* F1 Icon Button Styles */
+.iconButton {
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* F1 Primary Button Variation */
+.primary {
+  background: linear-gradient(135deg, #e10600, #dc0000);
+  color: white;
+  border: 2px solid transparent;
+}
+
+.primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.primary:hover::before {
+  left: 100%;
+}
+
+.primary:hover {
+  background: linear-gradient(135deg, #dc0000, #b30000);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(225, 6, 0, 0.4);
+}
+
+.primary:active {
+  transform: translateY(0);
+}
+
+/* F1 Secondary Button Variation */
+.secondary {
+  background: rgba(21, 21, 30, 0.9);
+  color: #ffffff;
+  border: 2px solid rgba(148, 148, 152, 0.3);
+}
+
+.secondary:hover {
+  background: rgba(21, 21, 30, 1);
+  border-color: #e10600;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(225, 6, 0, 0.2);
+}
+
+.secondary:active {
+  transform: translateY(0);
+  background: rgba(21, 21, 30, 0.8);
+}
+
+/* F1 Success Button Variation */
+.success {
+  background: linear-gradient(135deg, #6cd3bf, #5bbfaa);
+  color: white;
+  border: 2px solid transparent;
+}
+
+.success::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.success:hover::before {
+  left: 100%;
+}
+
+.success:hover {
+  background: linear-gradient(135deg, #5bbfaa, #4aa895);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(108, 211, 191, 0.4);
+}
+
+.success:active {
+  transform: translateY(0);
+}
+
+/* F1 Team Color Variations */
+.mercedes {
+  background: linear-gradient(135deg, #6cd3bf, #5bbfaa);
+  color: white;
+}
+
+.ferrari {
+  background: linear-gradient(135deg, #dc0000, #b30000);
+  color: white;
+}
+
+.redbull {
+  background: linear-gradient(135deg, #0600ef, #0500cc);
+  color: white;
+}
+
+.mclaren {
+  background: linear-gradient(135deg, #ff8700, #e67a00);
+  color: white;
+}
+
+/* F1 Ripple Effect */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.ripple:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* F1 Size Variations */
+.small {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  min-height: 36px;
+  letter-spacing: 0.3px;
+}
+
+.small .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.large {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  min-height: 56px;
+  letter-spacing: 0.7px;
+}
+
+.large .icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Full Width */
+.fullWidth {
+  width: 100%;
+}
+
+/* F1 Loading State */
+.loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* F1 Button Group */
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.buttonGroup.vertical {
+  flex-direction: column;
+}
+
+.buttonGroup.compact {
+  gap: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .button {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9rem;
+    min-height: 44px;
+  }
+  
+  .iconButton {
+    gap: 0.5rem;
+    padding: 0.875rem 1.25rem;
+  }
+  
+  .small {
+    padding: 0.625rem 1rem;
+    font-size: 0.825rem;
+    min-height: 40px;
+  }
+  
+  .large {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    min-height: 52px;
+  }
+  
+  .buttonGroup {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .buttonGroup .button {
+    width: 100%;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .button {
+    border-width: 2px;
+    border-style: solid;
+  }
+  
+  .github {
+    border-color: #24292e;
+  }
+  
+  .danger {
+    border-color: #e10600;
+  }
+  
+  .primary {
+    border-color: #e10600;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+  
+  .button:hover {
+    transform: none;
+  }
+  
+  .ripple::before {
+    transition: none;
+  }
+  
+  .loading::after {
+    animation: none;
+  }
+}
+
+/* Focus Visible for Keyboard Navigation */
+.button:focus-visible {
+  box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.5);
+  outline: none;
+}

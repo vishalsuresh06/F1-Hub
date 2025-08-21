@@ -1,95 +1,57 @@
-import Image from "next/image";
+"use server"
+
+import { SignInButton } from "@/components/buttons/sign-in-button";
+import { SignOutButton } from "@/components/buttons/sign-out-button";
+import { auth } from "@/auth";
+import Link from "next/link";
 import styles from "./page.module.css";
 
-export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+export default async function Home() {
+  const session = await auth();
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  if (session?.user) {
+    return (
+      <div className={styles.container}>
+        <div className={styles.welcomeCard}>
+          <div className={styles.userInfo}>
+            <h2 className={styles.userName}>{session.user.name}</h2>
+            <p className={styles.userEmail}>{session.user.email}</p>
+          </div>
+          
+          <div className={styles.buttonGroup}>
+            <Link href="/dashboard" className={styles.link}>
+              Go to Dashboard
+            </Link>
+            <SignOutButton />
+          </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+    )
+  }
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.welcomeCard}>
+        <h1 className={styles.welcomeTitle}>Welcome to Race Predictor</h1>
+        <p className={styles.welcomeSubtitle}>
+          Sign in with your GitHub account to get started
+        </p>
+        <SignInButton />
+        <div className={styles.separator}>
+          <hr className={styles.br}/>
+          <p> OR </p>
+          <hr className={styles.br}/>
+        </div>
+
+        <div className={styles.authLinks}>
+          <Link href="/sign-in" className={styles.authLink}>
+            Sign In with Email
+          </Link>
+          <p className={styles.signupText}>
+            Don't have an account? <Link href="/signup" className={styles.signupLink}>Sign up</Link>
+          </p>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
