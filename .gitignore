@@ -42,5 +42,6 @@ next-env.d.ts
 
 #backend
 venv/
-
+backend/__pycache__/
+backend/populate_db.log
 /lib/generated/prisma
