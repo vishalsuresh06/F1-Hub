@@ -40,3 +40,6 @@ Thumbs.db
 .terraform/
 *.pem
 *.key
+
+# FastF1
+fastf1_cache/
